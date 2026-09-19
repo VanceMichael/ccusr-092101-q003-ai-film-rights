@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "domain": "AI影视团队作品权属中枢",
+  "required_fields": [
+    "team_ref",
+    "member_ref",
+    "asset_ref",
+    "work_revision",
+    "rights_scope",
+    "effective_from"
+  ],
+  "time_format": "ISO 8601 with offset",
+  "sample": {
+    "team_ref": "TEAM-DEMO",
+    "member_ref": "MEMBER-A",
+    "work_revision": 2,
+    "rights_scope": "internal-review"
+  }
+}
