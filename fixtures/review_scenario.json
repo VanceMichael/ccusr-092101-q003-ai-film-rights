@@ -1,0 +1,19 @@
+{
+  "description": "匿名评审示例场景，全部为不含真实身份信息的引用编号",
+  "judges": [
+    { "judge_ref": "J1", "institution_ref": "INST-A", "expertise": ["微电影"] },
+    { "judge_ref": "J2", "institution_ref": "INST-B", "expertise": ["微电影", "微视频"] },
+    { "judge_ref": "J3", "institution_ref": "INST-C", "expertise": ["微视频", "AI漫剧"] }
+  ],
+  "submissions": [
+    { "work_ref": "W1", "category": "微电影", "institution_ref": "INST-A", "members": ["M1", "M2"] },
+    { "work_ref": "W2", "category": "微视频", "institution_ref": "INST-B", "members": ["M3", "M4"] }
+  ],
+  "relations": [
+    { "member_ref": "J2", "related_member_ref": "M3", "relation": "advisor" },
+    { "member_ref": "M9", "related_member_ref": "M1", "relation": "collaborator" }
+  ],
+  "declarations": [
+    { "judge_ref": "J3", "target_type": "member", "target_ref": "M5", "detail": "曾共同立项" }
+  ]
+}

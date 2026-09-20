@@ -1,5 +1,5 @@
 {
-  "schema_version": "1",
+  "schema_version": "2",
   "domain": "AI影视团队作品权属中枢",
   "required_fields": [
     "team_ref",
@@ -15,5 +15,16 @@
     "member_ref": "MEMBER-A",
     "work_revision": 2,
     "rights_scope": "internal-review"
-  }
+  },
+  "review_entities": {
+    "submission": ["work_ref", "category", "title", "institution_ref", "region_ref", "file_ref", "file_sha256", "submitted_at"],
+    "frozen_version": ["work_ref", "version_no", "file_sha256", "frozen_at"],
+    "review_copy": ["anon_ref", "copy_sha256", "scrubbed_fields"],
+    "conflict": ["judge_ref", "work_ref", "kind", "degree", "source"],
+    "seat": ["seat_ref", "anon_ref", "judge_ref", "round", "status", "reason"],
+    "score": ["seat_ref", "score", "sealed_at", "score_hash"],
+    "award": ["award_ref", "work_ref", "award_name", "frozen_hash", "score_set_hash", "exclusion_hash"],
+    "appeal": ["appeal_ref", "work_ref", "grounds", "status"]
+  },
+  "review_roles": ["admin", "assignment_officer", "judge", "reviewer", "award_confirmer", "appeal_officer"]
 }
