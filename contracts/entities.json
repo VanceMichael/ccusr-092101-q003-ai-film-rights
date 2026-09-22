@@ -1,19 +1,60 @@
 {
-  "schema_version": "1",
-  "domain": "AI影视团队作品权属中枢",
-  "required_fields": [
-    "team_ref",
-    "member_ref",
-    "asset_ref",
-    "work_revision",
-    "rights_scope",
-    "effective_from"
-  ],
+  "schema_version": "2",
+  "domain": "两岸微电影/微视频/AI漫剧匿名评审后端",
   "time_format": "ISO 8601 with offset",
+  "hash": "sha256 hex digest; canonical JSON with recursively sorted object keys",
+  "sides": {
+    "identity": [
+      "team_id",
+      "member_id",
+      "work_id",
+      "version_id",
+      "judge_id",
+      "judge_mentorships",
+      "judge_recusals",
+      "identity_envelopes"
+    ],
+    "review": [
+      "freeze_id",
+      "item_id",
+      "round_id",
+      "seat_id",
+      "score_id",
+      "tie_id",
+      "award_id",
+      "appeal_id"
+    ]
+  },
+  "required_fields": {
+    "team": ["team_id", "team_name", "school", "region"],
+    "work_version": ["work_id", "media_sha256", "media_ref"],
+    "freeze": ["freeze_id", "name"],
+    "frozen_item": ["item_id", "freeze_id", "work_id", "version_id", "category", "media_sha256", "copy_ref", "copy_sha256"],
+    "round": ["round_id", "freeze_id", "categories", "quorum", "max_load", "deadline_at"],
+    "seat": ["seat_id", "round_id", "item_id", "judge_id", "status", "rationale_json"],
+    "score": ["score_id", "seat_id", "item_id", "round_id", "judge_id", "value", "entry_hash"],
+    "award": ["award_id", "round_id", "category", "place", "item_id", "status", "package_hash"]
+  },
+  "enums": {
+    "seat_status": ["assigned", "submitted", "recused", "timeout", "reassigned"],
+    "screening_outcome": ["assigned", "conflict", "no_expertise", "at_capacity"],
+    "conflict_kind": ["direct", "indirect"],
+    "conflict_code": ["mentorship", "recusal", "partner_unit", "mentorship_indirect", "recusal_indirect", "leak_tainted"],
+    "round_status": ["open", "scoring_closed", "published"],
+    "award_status": ["proposed", "confirmed", "published"],
+    "roles": ["SECRETARIAT", "JUDGE", "TIE_REVIEWER", "AWARD_CONFIRMER", "AUDITOR", "TEAM", "ADMIN"]
+  },
+  "immutable_tables": ["scores", "tie_votes", "audit_log"],
   "sample": {
-    "team_ref": "TEAM-DEMO",
-    "member_ref": "MEMBER-A",
-    "work_revision": 2,
-    "rights_scope": "internal-review"
+    "item_id": "RV-7f3a9c2e",
+    "judge_fingerprint": "JP-363EE572",
+    "round_id": "rnd-2b8e",
+    "quorum": 3,
+    "valid_score": {
+      "score_id": "score-1a2b",
+      "judge_fingerprint": "JP-363EE572",
+      "value": 88.5,
+      "sealed_at": "2026-09-22T10:00:00+08:00"
+    }
   }
 }

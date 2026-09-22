@@ -1,6 +1,41 @@
 {
-  "team_ref": "TEAM-DEMO",
-  "member_ref": "MEMBER-A",
-  "work_revision": 2,
-  "rights_scope": "internal-review"
+  "freeze": {
+    "freeze_id": "frz-example",
+    "name": "2026 两岸青年微电影展初评冻结",
+    "note": "示例结构，不含真实身份信息"
+  },
+  "frozen_item": {
+    "item_id": "RV-7f3a9c2e1b4d6a80",
+    "freeze_id": "frz-example",
+    "category": "AI漫剧",
+    "scrubbed_title": "匿名作品 RV-7f3a9c2e1b4d6a80",
+    "media_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "copy_ref": "copy://frz-example/RV-7f3a9c2e1b4d6a80.review.mp4",
+    "copy_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "scrub_report": {
+      "original_title_replaced": 1,
+      "email": 1,
+      "phone_cn": 1,
+      "credit_line": 2,
+      "school_mention": 1,
+      "metadata_redacted_keys": 3
+    }
+  },
+  "round": {
+    "round_id": "rnd-example",
+    "freeze_id": "frz-example",
+    "quorum": 3,
+    "max_load": 12,
+    "deadline_at": "2026-10-10T23:59:59+08:00"
+  },
+  "screening": {
+    "judge_fingerprint": "JP-363EE572",
+    "outcome": "conflict",
+    "reasons": [{ "code": "mentorship_indirect", "kind": "indirect" }]
+  },
+  "published_award": {
+    "award_id": "award-example",
+    "place": 1,
+    "package_hash": "sha256-hex-of-canonical-evidence-package"
+  }
 }

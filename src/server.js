@@ -1,21 +1,15 @@
-
 const http = require("node:http");
+const { handler } = require("./routes");
 
 function createServer() {
-  return http.createServer((request, response) => {
-    if (request.method === "GET" && request.url === "/health") {
-      response.writeHead(200, { "content-type": "application/json" });
-      response.end(JSON.stringify({ status: "ok" }));
-      return;
-    }
-    response.writeHead(404, { "content-type": "application/json" });
-    response.end(JSON.stringify({ error: "not_found" }));
-  });
+  return http.createServer(handler());
 }
 
 if (require.main === module) {
   const port = Number.parseInt(process.env.PORT || "8080", 10);
-  createServer().listen(port, "0.0.0.0");
+  createServer().listen(port, "0.0.0.0", () => {
+    console.log(`匿名评审服务已启动，监听端口 ${port}`);
+  });
 }
 
 module.exports = { createServer };

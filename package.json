@@ -1,7 +1,8 @@
 {
-  "name": "ai-film-rights",
-  "version": "0.1.0",
+  "name": "blind-review-backend",
+  "version": "0.2.0",
   "private": true,
+  "description": "两岸微电影/微视频/AI漫剧匿名评审后端：冻结、盲评副本、冲突回避分派、密封评分与可验证奖项",
   "scripts": {
     "start": "node src/server.js",
     "migrate": "node scripts/migrate.js",
